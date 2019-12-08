@@ -1,11 +1,3 @@
-extern crate clap;
-extern crate rustbox;
-
-mod alphabets;
-mod colors;
-mod state;
-mod view;
-
 use std::process::Command;
 
 fn exec_command(args: Vec<&str>) -> std::process::Output {
@@ -121,55 +113,4 @@ fn main() {
 
   println!("FCS: {:?}", active_pane_id);
   println!("FCS2: {:?}", thumbs_pane_id);
-
-  // let current_pane_id = "12";
-  // let new_pane_id = "14";
-
-  // // Retrieve current active pane in tmux session
-  // let active_command = vec!["tmux", "list-panes", "-F", "#{pane_id}:#{?pane_active,active,nope}"];
-
-  // let execution = exec_command(active_command);
-  //   let output = String::from_utf8_lossy(&execution.stdout);
-
-  // // Swap old pane with the new pane
-  // let swap_command = vec!["tmux", "swap-pane", "-d", "-s", current_pane_id, "-t", new_pane_id];
-
-  // let mut capture_command = vec!["tmux", "new-window", "-P", "-d", "-n", "[thumbs]"];
-
-  // string_params.iter().for_each(|param| {
-  //   let thumbs_param = format!("@thumbs-{}", param);
-  //   let command = vec![
-  //     "tmux",
-  //     "show",
-  //     "-vg",
-  //     &thumbs_param
-  //   ];
-
-  //   let execution = exec_command(command);
-  //   let output = String::from_utf8_lossy(&execution.stdout);
-
-  //   capture_command.extend(vec![param, output].iter().cloned());
-  // });
-
-  // println!("FCS: {:?}", capture_command);
-
-  // if let Some(pane) = args.value_of("tmux_pane") {
-  //   capture_command.extend(vec!["-t", pane].iter().cloned());
-  // }
-
-  // let execution = exec_command(capture_command);
-  // let output = String::from_utf8_lossy(&execution.stdout);
-  // let lines = output.split("\n").collect::<Vec<&str>>();
-
-  // if let Some(pane) = args.value_of("tmux_pane") {
-  //   exec_command(vec!["tmux", "swap-pane", "-t", pane]);
-  // };
-
-  // if paste {
-  //   exec_command(vec![
-  //     "bash",
-  //     "-c",
-  //     str::replace(upcase_command, "{}", text.as_str()).as_str(),
-  //   ]);
-  // }
 }
